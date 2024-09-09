@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DTI GUI V2</title>
+    <style>
+        body {
+            background-color: #282c34;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #ffffff;
+            border-radius: 10px;
+            width: 300px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .copy-button {
+            background-color: #61dafb;
+            color: #282c34;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .copy-button:hover {
+            background-color: #4fbdd6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>DTI GUI V2</h1>
+        <button class="copy-button" onclick="copyToClipboard()">Copy to Clipboard</button>
+    </div>
+
+    <script>
+        function copyToClipboard() {
+            const code = `pcall(function()\nloadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/DTI-GUI-V2/main/dti_gui_v2.lua",true))()\nend)`;
+            navigator.clipboard.writeText(code).then(() => {
+                alert("Code copied to clipboard!");
+            }).catch(err => {
+                alert('Failed to copy: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
